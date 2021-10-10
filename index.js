@@ -10,12 +10,14 @@ class ContaCorrente{
     sacar(valor){
         if(this._saldo >= valor){//se o valor do saldo for maior e igual ao valor da conta = pode realizar o saque  
             this._saldo -=valor;//se o valor for menor e igua a valor da conta = nao pode realizar o saque  
+        return valor; //retornando o valor atual depois que é sacado 
         }
     }
     depositar(valor){
-        if(valor >0){//se valor for maior que 0 = ele pode receber o deposito 
-            this._saldo += valor; //se o saldo for maior e igual ao valor ele pode receber o deposito, validaçao para nao receber valor negativo 
+        if(valor <= 0){//se valor do deposito for menor igual a 0 ele retorna o valor  
+            return;
         }
+        this._saldo += valor; //se o saldo for maior e igual ao valor ele pode receber o deposito, validaçao para nao receber valor negativo 
     }
 }
 
@@ -32,10 +34,12 @@ cliente2.cpf = 88822233309;
 const contaCorrenteRicardo = new ContaCorrente();
 contaCorrenteRicardo.agencia = 1001;
 
-contaCorrenteRicardo.depositar(100);//usando o metodo depositar 
+contaCorrenteRicardo.depositar(-100);//usando o metodo depositar 
 contaCorrenteRicardo.depositar(100);
 contaCorrenteRicardo.depositar(100);
-contaCorrenteRicardo.sacar(50) //usando o metodo sacar em uma funçao e adicionando o valor em parentesses 
+const valorSacado = contaCorrenteRicardo.sacar(50) //usando o metodo sacar em uma funçao e adicionando o valor em parentesses 
+
+console.log(valorSacado);
 
 console.log(contaCorrenteRicardo);
 
