@@ -13,13 +13,18 @@ cliente2.cpf = 88822233309;
 
 const contaCorrenteRicardo = new ContaCorrente();
 contaCorrenteRicardo.agencia = 1001;
+contaCorrenteRicardo.cliente = cliente1
+contaCorrenteRicardo.depositar(500);
 
-contaCorrenteRicardo.depositar(-100);//usando o metodo depositar 
-contaCorrenteRicardo.depositar(100);
-contaCorrenteRicardo.depositar(100);
-const valorSacado = contaCorrenteRicardo.sacar(50) //usando o metodo sacar em uma funçao e adicionando o valor em parentesses 
+const conta2 = new ContaCorrente();
+conta2.cliente = cliente2;
+conta2.agencia = 102;
 
-console.log(valorSacado);
+contaCorrenteRicardo.tranferir(200, conta2);
 
+//const valorSacado = contaCorrenteRicardo.sacar(50) //usando o metodo sacar em uma funçao e adicionando o valor em parentesses 
+// console.log(valorSacado);
+
+console.log(conta2);
 console.log(contaCorrenteRicardo);
 

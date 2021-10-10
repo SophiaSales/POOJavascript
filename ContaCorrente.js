@@ -1,5 +1,6 @@
 export class ContaCorrente{
     agencia;
+    cliente;
     _saldo = 0; //Saldo passa a ser um valor privado podendo ser acesado só dentro da classe  
 
 //metodo sacar
@@ -16,5 +17,11 @@ export class ContaCorrente{
             return;
         }
         this._saldo += valor; //se o saldo for maior e igual ao valor ele pode receber o deposito, validaçao para nao receber valor negativo 
+    }
+
+//metodo transferencia
+    tranferir(valor, conta){
+        const valorSacado = this.sacar(valor)//sacar valor recebido e guardar esse valor na variavel valorSacado
+        conta.depositar(valorSacado)// deposita o valorSacado na conta adicionada
     }
 }
