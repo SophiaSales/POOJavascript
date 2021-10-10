@@ -1,8 +1,25 @@
+import { Cliente } from "./Cliente.js";
+
 export class ContaCorrente{
     agencia;
-    cliente;
+    _cliente;
+
+//setando cliente para evitar alteraçoes 
+    set cliente(novoValor){
+        if(novoValor instanceof Cliente){//se o novovalor for uma instancia de um novo cliente
+            this._cliente = novoValor;
+        }
+    }
+//pegando cliente
+    get cliente(){
+        return this._cliente;//para buscar valores corretos do cliente 
+    }
+    
     _saldo = 0; //Saldo passa a ser um valor privado podendo ser acesado só dentro da classe  
 
+    get saldo(){
+        return this._saldo;//para buscar valores corretos do saldo
+    }
 //metodo sacar
     sacar(valor){
         if(this._saldo >= valor){//se o valor do saldo for maior e igual ao valor da conta = pode realizar o saque  

@@ -17,14 +17,15 @@ contaCorrenteRicardo.cliente = cliente1
 contaCorrenteRicardo.depositar(500);
 
 const conta2 = new ContaCorrente();
-conta2.cliente = cliente2;
+conta2.cliente = cliente1;//usando o metodo cliente, setando o cliente em uma conta corrente
 conta2.agencia = 102;
 
 contaCorrenteRicardo.tranferir(200, conta2);
+console.log(conta2.saldo);
 
 //const valorSacado = contaCorrenteRicardo.sacar(50) //usando o metodo sacar em uma funçao e adicionando o valor em parentesses 
 // console.log(valorSacado);
 
-console.log(conta2);
-console.log(contaCorrenteRicardo);
+// console.log(conta2);
+// console.log(contaCorrenteRicardo);
 
