@@ -2,26 +2,18 @@ import { Cliente } from "./Cliente.js";
 import {  ContaCorrente } from "./ContaCorrente.js"
 
 //objeto usando os moldes da classe, new segnifica a criaçao de uma instancia da classe 
-const cliente1 = new Cliente();
-
-cliente1.nome = "Ricardo";
-cliente1.cpf = 11122233309;
-
-const cliente2 = new Cliente();
-cliente2.nome = "Alice";
-cliente2.cpf = 88822233309;
+const cliente1 = new Cliente("Ricardo", 11122233309);
+const cliente2 = new Cliente("Alice", 88822233309);
+console.log(cliente2.cpf);
 
 const contaCorrenteRicardo = new ContaCorrente();
-contaCorrenteRicardo.agencia = 1001;
-contaCorrenteRicardo.cliente = cliente1
-contaCorrenteRicardo.depositar(500);
 
-const conta2 = new ContaCorrente();
-conta2.cliente = cliente1;//usando o metodo cliente, setando o cliente em uma conta corrente
-conta2.agencia = 102;
+contaCorrenteRicardo.depositar(500);
+const conta2 = new ContaCorrente(cliente2, 102);//usando o metodo cliente, setando o cliente em uma conta corrente
 
 contaCorrenteRicardo.tranferir(200, conta2);
-console.log(conta2.saldo);
+
+console.log(cliente2);
 
 //const valorSacado = contaCorrenteRicardo.sacar(50) //usando o metodo sacar em uma funçao e adicionando o valor em parentesses 
 // console.log(valorSacado);
