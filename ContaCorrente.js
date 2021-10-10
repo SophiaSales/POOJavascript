@@ -1,6 +1,7 @@
 import { Cliente } from "./Cliente.js";
 
 export class ContaCorrente{
+    static numeroDeContas = 0; //valor estaticos usado para varias contas criadas 
     agencia;
     _cliente;
     _saldo = 0; //Saldo passa a ser um valor privado podendo ser acesado só dentro da classe  
@@ -23,6 +24,7 @@ export class ContaCorrente{
     constructor(cliente, agencia){
         this.cliente = cliente;
         this.agencia = agencia;
+        ContaCorrente.numeroDeContas += 1;// vai somar 1 no atributo da conta corrente
     }
 
 //metodo sacar
